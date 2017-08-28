@@ -55,7 +55,7 @@ public abstract class NavigationItemActivity extends AppCompatActivity implement
         Intent intent = null;
 
         if (id == R.id.main) {
-            intent = SeachParkingActivity.newIntent(NavigationItemActivity.this);
+            intent = SearchParkingActivity.newIntent(NavigationItemActivity.this);
         } else if (id == R.id.safety_instructions) {
             intent = SearchResultsActivity.newIntent(NavigationItemActivity.this);
         } else if (id == R.id.service_request) {

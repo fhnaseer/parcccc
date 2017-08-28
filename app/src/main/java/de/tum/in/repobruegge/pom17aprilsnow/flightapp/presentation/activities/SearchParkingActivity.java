@@ -22,14 +22,14 @@ import java.util.List;
 import de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.Parking;
 import de.tum.in.repobruegge.pom17aprilsnow.flightapp.R;
 
-public class SeachParkingActivity extends NavigationItemActivity implements OnMapReadyCallback {
+public class SearchParkingActivity extends NavigationItemActivity implements OnMapReadyCallback {
     private GoogleMap _map;
     private List<Parking> _availableParkings = null;
     private Marker _selectedMarker = null;
     private LatLng _currentPosition = null;
 
     public static Intent newIntent(Context context) {
-        return new Intent(context, SeachParkingActivity.class);
+        return new Intent(context, SearchParkingActivity.class);
     }
 
     @Override
@@ -45,17 +45,21 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     private void addParkings() {
         _availableParkings = new ArrayList<Parking>();
         _currentPosition = new LatLng(48.150474, 11.619199);
-        addParking("Gotthelfstr 69", 48.141653, 11.624478, 5, true);
-        addParking("Richard-Strauss-Str. 81", 48.147469, 11.615880, 6, true);
-        addParking("Oberföhringer str. 2", 48.151131, 11.6087245, 4, true);
-        addParking("Elektrastr. 4", 48.153282, 11.621051, 6, false);
-        addParking("Englschalkinger str. 136", 48.153282, 11.621051, 5, false);
-        addParking("Denninger str 169", 48.147873, 11.627997, 4, true);
+        addParking("Gotthelfstr 69", 48.141653, 11.624478, 5, true, 10, 0);
+        addParking("Richard-Strauss-Str. 81", 48.147469, 11.615880, 6, true, 12, 0);
+        addParking("Oberföhringer str. 2", 48.151131, 11.6087245, 4, true, 14, 0);
+        addParking("Elektrastr. 4", 48.153282, 11.621051, 6, false, 12, 0);
+        addParking("Englschalkinger str. 136", 48.153282, 11.621051, 5, false, 10, 0);
+        addParking("Denninger str 169", 48.147873, 11.627997, 4, true, 12, 0);
     }
 
-    private void addParking(String name, double latitude, double longitude, double rent, boolean isSmall) {
-        Parking parking = new Parking(name, new LatLng(latitude, longitude), rent, isSmall);
-        _availableParkings.add(parking);
+    private void addParking(String name, double latitude, double longitude, double rent, boolean isSmall, int hour, int minute) {
+        Parking parking = new Parking(name, new LatLng(latitude, longitude), rent, isSmall, hour, minute);
+        if (Parking.ApplyFilter == true) {
+            if (parking.IsSmall == Parking.CurrentFilter.IsSmall && parking.Hour > Parking.CurrentFilter.Hour)
+                _availableParkings.add(parking);
+        } else
+            _availableParkings.add(parking);
     }
 
     @Override
