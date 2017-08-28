@@ -72,11 +72,11 @@ public class SearchParkingActivity extends NavigationItemActivity implements OnM
     }
 
     public void bookParking(View view) {
-         if (_selectedMarker == null) {
+        if (_selectedMarker == null) {
             Toast.makeText(getApplicationContext(), "Please select a parking.", Toast.LENGTH_SHORT).show();
             return;
         }
-        String uri = "http://maps.google.com/maps?f=d&hl=en&saddr="+_currentPosition.latitude+","+_currentPosition.longitude+"&daddr="+_selectedMarker.getPosition().latitude+","+_selectedMarker.getPosition().longitude;
+        String uri = "http://maps.google.com/maps?f=d&hl=en&saddr=" + _currentPosition.latitude + "," + _currentPosition.longitude + "&daddr=" + _selectedMarker.getPosition().latitude + "," + _selectedMarker.getPosition().longitude;
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
         startActivity(Intent.createChooser(intent, "Select an application"));
     }
@@ -96,7 +96,7 @@ public class SearchParkingActivity extends NavigationItemActivity implements OnM
         _map = googleMap;
         _map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
-            public boolean  onMarkerClick(Marker marker) {
+            public boolean onMarkerClick(Marker marker) {
                 if (_selectedMarker != null)
                     _selectedMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
                 if (!marker.equals(_selectedMarker)) {
@@ -107,7 +107,7 @@ public class SearchParkingActivity extends NavigationItemActivity implements OnM
             }
         });
         addMarkersToMap();
-        _map.animateCamera(CameraUpdateFactory.newLatLngZoom(_currentPosition,14));
+        _map.animateCamera(CameraUpdateFactory.newLatLngZoom(_currentPosition, 14));
     }
 
     private void addMarkersToMap() {
