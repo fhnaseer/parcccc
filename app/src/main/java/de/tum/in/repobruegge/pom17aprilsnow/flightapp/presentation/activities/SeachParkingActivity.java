@@ -19,15 +19,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.POI;
+import de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.Parking;
 import de.tum.in.repobruegge.pom17aprilsnow.flightapp.R;
 
 public class SeachParkingActivity extends NavigationItemActivity implements OnMapReadyCallback {
     private GoogleMap _map;
-    public static final String CURRENT_TRIP_ID = "de.tum.in.repobruegge.pom16aprilsnow.flightapp.currentflight";
-    private List<POI> _availableParkings = null;
+    private List<Parking> _availableParkings = null;
     private Marker _selectedMarker = null;
     private LatLng _currentPosition = null;
+
+    public static Intent newIntent(Context context) {
+        return new Intent(context, SeachParkingActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,31 +43,24 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     }
 
     private void addParkings() {
-        _availableParkings = new ArrayList<POI>();
+        _availableParkings = new ArrayList<Parking>();
         _currentPosition = new LatLng(48.150474, 11.619199);
-        addParking("Gotthelfstr 69", 48.141653,11.624478);
-        addParking("Richard-Strauss-Str. 81", 48.147469, 11.615880);
-        addParking("Oberföhringer str. 2", 48.151131, 11.608724);
-        addParking("Elektrastr. 4",         48.153282, 11.621051);
-        addParking("Englschalkinger str. 136", 48.153282, 11.621051);
-        addParking("Denninger str 169", 48.147873, 11.627997);
+        addParking("Gotthelfstr 69", 48.141653, 11.624478, 5, true);
+        addParking("Richard-Strauss-Str. 81", 48.147469, 11.615880, 6, true);
+        addParking("Oberföhringer str. 2", 48.151131, 11.6087245, 4, true);
+        addParking("Elektrastr. 4", 48.153282, 11.621051, 6, false);
+        addParking("Englschalkinger str. 136", 48.153282, 11.621051, 5, false);
+        addParking("Denninger str 169", 48.147873, 11.627997, 4, true);
     }
 
-    private void addParking(String name, double latitude, double longitude) {
-        POI parking = new POI();
-        parking.setName(name);
-        parking.setLatitude(latitude);
-        parking.setLongitude(longitude);
+    private void addParking(String name, double latitude, double longitude, double rent, boolean isSmall) {
+        Parking parking = new Parking(name, new LatLng(latitude, longitude), rent, isSmall);
         _availableParkings.add(parking);
     }
 
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_search_parking;
-    }
-
-    public static Intent newIntent(Context context) {
-        return new Intent(context, SeachParkingActivity.class);
     }
 
     public void seeReservations(View view) {
@@ -92,8 +88,6 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
         _map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean  onMarkerClick(Marker marker) {
-//             for (POI parking : _availableParkings) {
-//                 if (marker.getPosition().latitude == parking.?getLatitude() && marker.getPosition().longitude == parking.getLongitude())
                 if (_selectedMarker != null)
                     _selectedMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
                 if (!marker.equals(_selectedMarker)) {
@@ -112,11 +106,10 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
                 .position(_currentPosition)
                 .title("Current Location")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        for(POI parking : _availableParkings) {
-            LatLng poiLocation = new LatLng(parking.getLatitude(), parking.getLongitude());
+        for (Parking parking : _availableParkings) {
             _map.addMarker(new MarkerOptions()
-                    .position(poiLocation)
-                    .title(parking.getName())
+                    .position(parking.Location)
+                    .title(parking.Name)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         }
     }
