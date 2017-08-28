@@ -6,17 +6,15 @@ import android.os.Bundle;
 
 import de.tum.in.repobruegge.pom17aprilsnow.flightapp.R;
 
-public class SearchOptionsActivity extends NavigationItemActivity {
-
-//    private Feedback _feedback = new Feedback();
+public class SearchResultsActivity extends NavigationItemActivity {
 
     public static Intent newIntent(Context context) {
-        return new Intent(context, SearchOptionsActivity.class);
+        return new Intent(context, SearchResultsActivity.class);
     }
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_search_options;
+        return R.layout.activity_search_results;
     }
 
     @Override

@@ -27,14 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.activities.TripFlightListActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".presentation.activities.SafetyInstructionsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".presentation.activities.FlightDetailsActivity"
+            android:name=".presentation.activities.SearchResultsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
@@ -42,49 +35,7 @@
             android:value="@string/google_maps_key_api" />
 
         <activity
-            android:name=".presentation.activities.DestinationMapActivity"
-            android:label="@string/title_activity_map"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <provider
-            android:name=".Model.database.FlightContentProvider"
-            android:authorities="de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.database.flights"
-            android:enabled="true"
-            android:exported="false" />
-        <provider
-            android:name=".Model.database.TripContentProvider"
-            android:authorities="de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.database.trips"
-            android:enabled="true"
-            android:exported="false" />
-
-        <activity
-            android:name=".presentation.activities.CreateTripActivity"
-            android:label="@string/title_activity_create_trip"
-            android:parentActivityName=".presentation.activities.SeachParkingActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.SeachParkingActivity" />
-        </activity>
-        <activity
-            android:name=".presentation.activities.ShowTripActivity"
-            android:label="@string/title_activity_show_trip"
-            android:parentActivityName=".presentation.activities.SeachParkingActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.SeachParkingActivity" />
-        </activity>
-        <activity
-            android:name=".presentation.activities.AddFlightActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".presentation.activities.AvailableFlightListActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".presentation.activities.SearchOptionsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".presentation.activities.TripMapActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
