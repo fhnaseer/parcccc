@@ -10,17 +10,16 @@ repositories {
 
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 'Google Inc.:Google APIs:24'
     buildToolsVersion '25.0.3'
     defaultConfig {
-        applicationId "parccc"
-        minSdkVersion 21
-        targetSdkVersion 25
+        applicationId "de.tum.in.repobruegge.pom17aprilsnow.flightapp"
+        minSdkVersion 24
+        targetSdkVersion 24
         versionCode 1
         versionName "1.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
     signingConfigs {
         release {
             storeFile file("/opt/android/android.jks")
@@ -29,8 +28,6 @@ android {
             keyPassword "android"
         }
     }
-
-
     buildTypes {
         release {
             minifyEnabled false
@@ -38,18 +35,18 @@ android {
             signingConfig signingConfigs.release
         }
     }
-
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile group: 'org.restlet.android', name: 'org.restlet', version: '2.3.2'
-    compile group: 'org.restlet.android', name: 'org.restlet.ext.json', version: '2.3.2'
-//    compile group: 'org.restlet.android', name: 'org.restlet.ext.jackson', version: '2.3.2'
-
+    compile 'org.restlet.android:org.restlet:2.3.2'
+    compile 'org.restlet.android:org.restlet.ext.json:2.3.2'
+    //    compile group: 'org.restlet.android', name: 'org.restlet.ext.jackson', version: '2.3.2'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.android.support:design:25.3.1'
