@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.tum.in.repobruegge.pom17aprilsnow.flightapp">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/april_snow_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".presentation.activities.TripListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.activities.TripFlightListActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.activities.SafetyInstructionsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.activities.FlightDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key_api" />
+
+        <activity
+            android:name=".presentation.activities.DestinationMapActivity"
+            android:label="@string/title_activity_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name=".Model.database.FlightContentProvider"
+            android:authorities="de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.database.flights"
+            android:enabled="true"
+            android:exported="false" />
+        <provider
+            android:name=".Model.database.TripContentProvider"
+            android:authorities="de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.database.trips"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".presentation.activities.CreateTripActivity"
+            android:label="@string/title_activity_create_trip"
+            android:parentActivityName=".presentation.activities.TripListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.TripListActivity" />
+        </activity>
+        <activity
+            android:name=".presentation.activities.ShowTripActivity"
+            android:label="@string/title_activity_show_trip"
+            android:parentActivityName=".presentation.activities.TripListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.TripListActivity" />
+        </activity>
+        <activity
+            android:name=".presentation.activities.AddFlightActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".presentation.activities.AvailableFlightListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.activities.FeedbackActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.activities.TripMapActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

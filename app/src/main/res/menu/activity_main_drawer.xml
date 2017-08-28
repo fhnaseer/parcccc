@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main"
+            android:icon="@drawable/ic_flight_black_24px"
+            android:title="@string/flight_trips_name" />
+        <item
+            android:id="@+id/safety_instructions"
+            android:icon="@drawable/ic_safety_instructions_black_24px"
+            android:title="@string/safety_instructions_name" />
+        <item
+            android:id="@+id/service_request"
+            android:icon="@drawable/ic_service_request_black_24px"
+            android:title="@string/service_request_name" />
+        <item
+            android:id="@+id/favourite_poi"
+            android:icon="@drawable/ic_favourite_poi_black_24px"
+            android:title="@string/favourite_poi_name" />
+        <item
+            android:id="@+id/passenger_survey"
+            android:icon="@drawable/ic_passenger_survey_black_24px"
+            android:title="@string/passenger_survey_name" />
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings_black_24px"
+            android:title="@string/settings_name" />
+    </group>
+</menu>

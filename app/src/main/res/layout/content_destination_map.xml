@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_destination_map">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/destination_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/presence_offline" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/city_name"
+                android:textSize="@dimen/label_local_time_dest_size"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/presence_offline" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/label_weather_desc_and_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_weather_desc_and_temp"
+                android:textSize="@dimen/label_weather_dest_size"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+            <TextView
+                android:id="@+id/label_dest_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_dest_loc_dest_time"
+                android:textSize="@dimen/label_local_time_dest_size"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5">
+        <include layout="@layout/fragment_map" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/destiny_flights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_result_flights"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_weight="0.5"
+        >
+        <TextView
+            android:id="@+id/title_destiny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_result_poi"
+            android:text="@string/title_poi"
+            android:textSize="@dimen/label_title_poi_size"
+            />
+        <ListView
+            android:id="@+id/list_destiny_poi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_destiny"
+            android:padding="@dimen/padding_result_poi"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">April Snow Flights</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_flight_details">FlightDetailsActivity</string>
+    <string name="string_flight_from">Your flight from %1$s to %2$s</string>
+    <string name="label_to">to</string>
+    <string name="label_date_text">Date: %1$s</string>
+    <string name="label_weather">Weather in %1$s</string>
+    <string name="label_local_time">Local Time: %1$s</string>
+    <string name="label_weather_desc_and_temp">%1$s %2$s °C</string>
+    <string name="button_show_trip_on_map">Show Trip On Map</string>
+    <string name="button_add_a_flight">Add A Flight</string>
+    <string name="label_start_time_start_loc">%1$s\n%2$s</string>
+    <string name="label_transfer">%1$s</string>
+    <string name="label_dest_loc_dest_time">%1$s\n%2$s</string>
+    <string name="label_terminal">%1$s</string>
+    <string name="label_flight_number">%1$s</string>
+    <string name="label_airline">%1$s</string>
+    <string name="button_remove_from_trip">Remove from trip</string>
+    <string name="button_show_destination_map">Show Destination on Map</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="flight_trips_name">Your Flight Trips</string>
+    <string name="safety_instructions_name">Safety Instructions</string>
+    <string name="service_request_name">Service Request</string>
+    <string name="favourite_poi_name">Favorite POI</string>
+    <string name="passenger_survey_name">Passenger Srurvey</string>
+    <string name="settings_name">Settings</string>
+
+	<!-- Feedback page Strings -->
+    <string name="submit_survey_name">Submit and earn bonus miles</string>
+    <string name="survey_heading_name">Help us to improve!</string>
+    <string name="overall_experience">Overall Experience</string>
+    <string name="customer_service">Customer Service</string>
+    <string name="meals_and_beverages">Meals and Beverages</string>
+    <string name="app_usability">App Usability</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="any_other_feedback">Any other feedback</string>
+    <string name="feedback_submitted">Feedback Submitted.</string>
+    <string name="feedbacktype1">Excellent</string>
+    <string name="feedbacktype2">Good</string>
+    <string name="feedbacktype3">Average</string>
+    <string name="feedbacktype4">Bad</string>
+    <string name="feedbacktype5">Pathetic</string>
+    <string-array name="feedbacktypelist">
+        <item>@string/feedbacktype1</item>
+        <item>@string/feedbacktype2</item>
+        <item>@string/feedbacktype3</item>
+        <item>@string/feedbacktype4</item>
+        <item>@string/feedbacktype5</item>
+    </string-array>
+
+    <!-- Flight Detail Activity -->
+    <string name="flight_detail_activity_title">Flight Details</string>
+
+    <!-- Map Destination Activity -->
+    <string name="country_name">%1$s</string>
+    <string name="city_name">%1$s</string>
+    <string name="title_activity_map">Destination</string>
+    <string name="map_activity_title">Your Destination</string>
+
+    <!-- Database Strings -->
+    <string name="insert_failed">Insert Failed</string>
+    <string name="invalid_query_uri">Invalid Query Uri</string>
+    <string name="invalid_insert_uri">Invalid Insert Uri</string>
+    <string name="invalid_update_uri">Invalid Update Uri</string>
+    <string name="invalid_delete_uri">Invalid Delete Uri</string>
+
+    <!-- Trip Strings -->
+    <string name="title_activity_trip_list">TripListActivity</string>
+    <string name="button_create_new_trip">Create New Trip </string>
+    <string name="title_activity_create_trip">CreateTripActivity</string>
+
+    <string name="hint_name_required">Name (Required)</string>
+    <string name="button_save_trip">Save Trip</string>
+    <string name="trip_created">Trip Created</string>
+    <string name="trip_not_created">Trip Not Created</string>
+    <string name="trip_name">Trip Name</string>
+
+    <string name="title_activity_show_trip">ShowTripActivity</string>
+
+    <!-- Add flight activity  Strings -->
+    <string name="button_search_flights">Search</string>
+    <string name="add_flight_activity_title">Search flights</string>
+
+    <string name="from_label">From</string>
+    <string name="to_label">To</string>
+    <string name="depart_label">Depart</string>
+    <string name="return_label">Return</string>
+
+    <!--Results search flights-->
+    <string name="button_add_to_trip">Add to my trip</string>
+    <string name="label_flight_destiny"> Select outbound flight</string>
+    <string name="label_flight_return"> Select return flights </string>
+    <string name="flight_saved"> Flight successfully saved </string>
+    <string name="flight_not_saved"> Flight wasn\'t saved </string>
+
+    <!-- Safety Instructions-->
+    <string name="safety_heading_name">read carefully!</string>
+
+    <!--Results search flights-->
+    <string name="title_poi">Points of interests</string>
+
+    <string name="next">Next</string>
+    <string name="returnHint">2017-09-01</string>
+    <string name="departHint">2017-08-30</string>
+    <string name="destinationHint">LIS</string>
+    <string name="originHint">MUC</string>
+</resources>

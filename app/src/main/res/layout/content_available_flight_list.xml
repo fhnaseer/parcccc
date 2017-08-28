@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/available_flights_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:id="@+id/destiny_flights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="@dimen/padding_result_flights"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+         <TextView
+                android:id="@+id/title_destiny"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_result_flights"
+                android:text="@string/label_flight_destiny"
+                android:textSize="18sp"
+                />
+        <ListView
+            android:id="@+id/list_destiny_trips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_destiny"
+            android:padding="@dimen/padding_result_flights"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/return_flights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="@dimen/padding_result_flights"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <TextView
+            android:id="@+id/title_return"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_result_flights"
+            android:text="@string/label_flight_return"
+            android:textSize="18sp"
+            />
+        <ListView
+            android:id="@+id/list_return_trips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_return"
+            android:padding="@dimen/padding_result_flights"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_add_to_trip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/button_add_to_trip" />
+</LinearLayout>

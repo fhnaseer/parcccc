@@ -1,0 +1,37 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- General-->
+    <dimen name="button_font_size">20dp</dimen>
+
+    <!--Activity Flight Details-->
+    <dimen name="label_from_size">26dp</dimen>
+    <dimen name="label_date_size">16dp</dimen>
+    <dimen name="label_start_size">20dp</dimen>
+    <dimen name="label_transfer_size">20dp</dimen>
+    <dimen name="label_dest_size">20dp</dimen>
+    <dimen name="label_terminal_size">26dp</dimen>
+    <dimen name="label_flight_number_size">20dp</dimen>
+    <dimen name="label_ailrline_size">18dp</dimen>
+    <dimen name="label_weather_size">26dp</dimen>
+    <dimen name="label_weather_dest_size">18dp</dimen>
+    <dimen name="label_local_time_dest_size">18dp</dimen>
+    <dimen name="label_title_poi_size">18dp</dimen>
+
+    <!--Activity Add Details-->
+    <dimen name="padding">20dp</dimen>
+    <dimen name="label_add_flight_size">18dp</dimen>
+
+    <!--Activity Add Details-->
+    <dimen name="padding_result_flights">10dp</dimen>
+
+    <!--Activity Add Details-->
+    <dimen name="padding_result_poi">5dp</dimen>
+
+
+</resources>
