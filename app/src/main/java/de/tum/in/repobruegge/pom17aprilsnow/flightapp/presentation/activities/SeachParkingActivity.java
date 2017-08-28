@@ -26,7 +26,7 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     private GoogleMap _map;
     public static final String CURRENT_TRIP_ID = "de.tum.in.repobruegge.pom16aprilsnow.flightapp.currentflight";
     private List<POI> _availableParkings = null;
-    private POI _selectedParking = null;
+    private Marker _selectedMarker = null;
     private LatLng _currentPosition = null;
 
     @Override
@@ -42,7 +42,6 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     private void addParkings() {
         _availableParkings = new ArrayList<POI>();
         _currentPosition = new LatLng(48.150474, 11.619199);
-        addParking("Arabellastr 11", 48.150474, 11.619199);
         addParking("Gotthelfstr 69", 48.141653,11.624478);
         addParking("Richard-Strauss-Str. 81", 48.147469, 11.615880);
         addParking("Oberföhringer str. 2", 48.151131, 11.608724);
@@ -73,7 +72,13 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     }
 
     public void bookParking(View view) {
-
+         if (_selectedMarker == null) {
+            Toast.makeText(getApplicationContext(), "Please select a parking.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String uri = "http://maps.google.com/maps?f=d&hl=en&saddr="+_currentPosition.latitude+","+_currentPosition.longitude+"&daddr="+_selectedMarker.getPosition().latitude+","+_selectedMarker.getPosition().longitude;
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
+        startActivity(Intent.createChooser(intent, "Select an application"));
     }
 
     public void seeAll(View view) {
@@ -87,14 +92,13 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
         _map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean  onMarkerClick(Marker marker) {
-                for (POI parking : _availableParkings) {
-                    if (marker.getPosition().latitude == parking.getLatitude() && marker.getPosition().longitude == parking.getLongitude())
-                    {
-                        _selectedParking = parking;
-                        String uri = "http://maps.google.com/maps?f=d&hl=en&saddr="+_currentPosition.latitude+","+_currentPosition.longitude+"&daddr="+_selectedParking.getLatitude()+","+_selectedParking.getLongitude();
-                        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
-                        startActivity(Intent.createChooser(intent, "Select an application"));
-                    }
+//             for (POI parking : _availableParkings) {
+//                 if (marker.getPosition().latitude == parking.?getLatitude() && marker.getPosition().longitude == parking.getLongitude())
+                if (_selectedMarker != null)
+                    _selectedMarker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+                if (!marker.equals(_selectedMarker)) {
+                    marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    _selectedMarker = marker;
                 }
                 return true;
             }
@@ -104,6 +108,10 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
     }
 
     private void addMarkersToMap() {
+        _map.addMarker(new MarkerOptions()
+                .position(_currentPosition)
+                .title("Current Location")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         for(POI parking : _availableParkings) {
             LatLng poiLocation = new LatLng(parking.getLatitude(), parking.getLongitude());
             _map.addMarker(new MarkerOptions()
