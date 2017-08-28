@@ -2,6 +2,7 @@ package de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -86,11 +87,13 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
         _map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean  onMarkerClick(Marker marker) {
-                Toast.makeText(getApplicationContext(), "Clicked a marker with title..." + marker.getTitle(), Toast.LENGTH_SHORT).show();
                 for (POI parking : _availableParkings) {
                     if (marker.getPosition().latitude == parking.getLatitude() && marker.getPosition().longitude == parking.getLongitude())
                     {
                         _selectedParking = parking;
+                        String uri = "http://maps.google.com/maps?f=d&hl=en&saddr="+_currentPosition.latitude+","+_currentPosition.longitude+"&daddr="+_selectedParking.getLatitude()+","+_selectedParking.getLongitude();
+                        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
+                        startActivity(Intent.createChooser(intent, "Select an application"));
                     }
                 }
                 return true;
