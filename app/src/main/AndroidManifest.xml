@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".presentation.activities.TripListActivity"
+            android:name=".presentation.activities.SeachParkingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -60,20 +60,20 @@
         <activity
             android:name=".presentation.activities.CreateTripActivity"
             android:label="@string/title_activity_create_trip"
-            android:parentActivityName=".presentation.activities.TripListActivity"
+            android:parentActivityName=".presentation.activities.SeachParkingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.TripListActivity" />
+                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.SeachParkingActivity" />
         </activity>
         <activity
             android:name=".presentation.activities.ShowTripActivity"
             android:label="@string/title_activity_show_trip"
-            android:parentActivityName=".presentation.activities.TripListActivity"
+            android:parentActivityName=".presentation.activities.SeachParkingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.TripListActivity" />
+                android:value="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.SeachParkingActivity" />
         </activity>
         <activity
             android:name=".presentation.activities.AddFlightActivity"
@@ -81,7 +81,7 @@
         <activity android:name=".presentation.activities.AvailableFlightListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.activities.FeedbackActivity"
+            android:name=".presentation.activities.SearchOptionsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".presentation.activities.TripMapActivity"

@@ -55,7 +55,7 @@ public abstract class NavigationItemActivity extends AppCompatActivity implement
         Intent intent = null;
 
         if (id == R.id.main) {
-            intent = TripListActivity.newIntent(NavigationItemActivity.this);
+            intent = SeachParkingActivity.newIntent(NavigationItemActivity.this);
         } else if (id == R.id.safety_instructions) {
             intent = SafetyInstructionsActivity.newIntent(NavigationItemActivity.this);
         } else if (id == R.id.service_request) {
@@ -63,7 +63,7 @@ public abstract class NavigationItemActivity extends AppCompatActivity implement
         } else if (id == R.id.favourite_poi) {
 
         } else if (id == R.id.passenger_survey) {
-            intent = FeedbackActivity.newIntent(NavigationItemActivity.this);
+            intent = SearchOptionsActivity.newIntent(NavigationItemActivity.this);
         } else if (id == R.id.settings) {
 
         }

@@ -13,10 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -62,7 +60,7 @@ public class TripFlightListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_flight_list);
-        tripId = (Long) getIntent().getSerializableExtra(TripListActivity.CURRENT_TRIP_ID);
+        tripId = (Long) getIntent().getSerializableExtra(SeachParkingActivity.CURRENT_TRIP_ID);
         setUpToolbar();
 
         //TODO: Real Flights

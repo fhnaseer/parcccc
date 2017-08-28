@@ -120,7 +120,7 @@ public class AvailableFlightListActivity extends AppCompatActivity {
 
                     // and go back to the trip screen
                     Intent intent = new Intent(getApplicationContext(),TripFlightListActivity.class);
-                    intent.putExtra(TripListActivity.CURRENT_TRIP_ID, tripId);
+                    //intent.putExtra(SeachParkingActivity.CURRENT_TRIP_ID, tripId);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
 

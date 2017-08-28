@@ -26,7 +26,7 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <include layout="@layout/content_trip_list" />
+        <include layout="@layout/content_search_options" />
 
     </android.support.design.widget.CoordinatorLayout>
     <android.support.design.widget.NavigationView

@@ -2,11 +2,8 @@ package de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 import de.tum.in.repobruegge.pom17aprilsnow.flightapp.Model.database.DatabaseDescription;
@@ -26,7 +23,7 @@ public class ShowTripActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Long tripId = (Long) getIntent().getSerializableExtra(TripListActivity.CURRENT_TRIP_ID);
+        Long tripId = (Long) getIntent().getSerializableExtra(SeachParkingActivity.CURRENT_TRIP_ID);
 
         tripCursor = getContentResolver().query(
                 DatabaseDescription.Trip.buildTripUri(tripId),
