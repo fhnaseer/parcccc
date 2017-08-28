@@ -13,15 +13,19 @@
         <include layout="@layout/fragment_map" />
     </LinearLayout>
 
-    <!--<SearchView-->
-    <!--android:id="@+id/simpleSearchView"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:iconifiedByDefault="false"-->
-    <!--android:queryHint="Where to?"/>-->
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:onClick="searchOptions"
+        android:queryHint="Where to?"/>
+
     <FrameLayout
         android:id="@+id/mapwhere"
         android:layout_width="match_parent"
+        android:layout_below="@+id/simpleSearchView"
+        android:layout_above="@+id/reservation_button"
         android:layout_height="0dp"
         android:layout_weight="1.03" />
 

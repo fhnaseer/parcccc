@@ -77,8 +77,13 @@ public class SeachParkingActivity extends NavigationItemActivity implements OnMa
         startActivity(Intent.createChooser(intent, "Select an application"));
     }
 
-    public void seeAll(View view) {
+    public void searchOptions(View view) {
         Intent intent = new Intent(getApplicationContext(), SearchOptionsActivity.class);
+        startActivity(intent);
+    }
+
+    public void seeAll(View view) {
+        Intent intent = new Intent(getApplicationContext(), SearchResultsActivity.class);
         startActivity(intent);
     }
 
