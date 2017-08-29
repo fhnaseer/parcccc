@@ -57,12 +57,22 @@
         android:layout_alignParentStart="true" />
 
     <CheckBox
-        android:id="@+id/disabled_checkBox"
+        android:id="@+id/smallcar_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Disbaled Parking"
+        android:text="Small Car"
+
+        android:layout_marginBottom="37dp"
         android:layout_above="@+id/go_button"
         android:layout_alignParentStart="true" />
+
+    <!--<CheckBox-->
+        <!--android:id="@+id/disabled_checkBox"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Disbaled Parking"-->
+        <!--android:layout_above="@+id/go_button"-->
+        <!--android:layout_alignParentStart="true" />-->
 
     <Button
         android:id="@+id/go_button"
