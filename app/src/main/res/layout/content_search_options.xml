@@ -1,34 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
     <SearchView
-        android:id="@+id/simpleSearchView"
+        android:id="@+id/simpleSearchView_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:queryHint="Where to?"/>
+        android:queryHint="Where from?"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignEnd="@+id/simpleSearchView_end">
 
-    <TextView
-        android:id="@+id/starttime"
+    </SearchView>
+
+    <SearchView
+        android:id="@+id/simpleSearchView_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/smallcar_checkBox"
+        android:iconifiedByDefault="false"
+        android:queryHint="Where to?"
+        android:layout_below="@+id/simpleSearchView_start"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/simpleSearchView"
-        android:layout_marginTop="38dp"
-        android:text="Start Time" />
+        android:layout_marginTop="11dp"
+        android:layout_alignParentEnd="true">
 
-    <TextView
-        android:id="@+id/endtime"
+    </SearchView>
+
+
+    <Button
+        android:id="@+id/getstarttime_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="showTimePickerDialog"
+        android:text = "Pick Start time"
+        android:layout_below="@+id/simpleSearchView_end"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/starttime"
-        android:layout_marginTop="26dp"
-        android:text="End Time" />
+        android:layout_marginTop="26dp" />
+
+    <Button
+        android:id="@+id/getendtime_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showTimePickerDialog"
+        android:text="Pick End time(Optional)"
+        android:layout_alignTop="@+id/getstarttime_textview"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:id="@+id/bigcar_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Big Car"
+        android:layout_above="@+id/smallcar_checkBox"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/smallcar_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small Car"
+        android:layout_above="@+id/disabled_checkBox"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/disabled_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disbaled Parking"
+        android:layout_above="@+id/go_button"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/go_button"
@@ -39,21 +81,22 @@
         android:layout_marginBottom="48dp"
         android:text="Go" />
 
-    <CheckBox
-        android:id="@+id/bigcar_checkBox"
+    <TextView
+        android:id="@+id/updatestarttime_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/endtime"
-        android:layout_marginTop="52dp"
-        android:text="Big Car" />
+        android:layout_below="@+id/getstarttime_textview"
+        android:layout_marginTop="23dp"
+        android:text="NOW" />
 
-    <CheckBox
-        android:id="@+id/smallcar_checkBox"
+    <TextView
+        android:id="@+id/updateendtime_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bigcar_checkBox"
-        android:text="Small Car" />
+        android:layout_alignBottom="@+id/updatestarttime_textView"
+        android:layout_alignParentEnd="true"
+        android:text="(Optional)" />
+
 
 </RelativeLayout>
