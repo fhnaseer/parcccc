@@ -29,21 +29,22 @@
         android:iconifiedByDefault="false"
         android:queryHint="Where to?" />
 
-    <Button
-        android:id="@+id/reservation_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:text="Reservations" />
+    <!--<Button-->
+        <!--android:id="@+id/reservation_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:text="Reservations" />-->
 
     <Button
         android:id="@+id/book_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/reservation_button"
-        android:layout_alignParentEnd="true"
-        android:text="Book" />
+        android:text="Book"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <TabHost
         android:layout_width="200dip"

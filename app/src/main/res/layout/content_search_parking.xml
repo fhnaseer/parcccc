@@ -5,14 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5">
-        <include layout="@layout/fragment_map" />
-    </LinearLayout>
-
     <SearchView
         android:id="@+id/simpleSearchView"
         android:layout_width="wrap_content"
@@ -20,6 +12,17 @@
         android:iconifiedByDefault="false"
         android:onClick="searchOptions"
         android:queryHint="Where to?"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/simpleSearchView"
+        android:layout_above="@+id/reservation_button"
+        android:layout_weight="0.5"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+        <include layout="@layout/fragment_map" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/mapwhere"
@@ -31,28 +34,21 @@
 
     <Button
         android:id="@+id/reservation_button"
-        android:layout_width="130dp"
+        android:layout_width="190dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:onClick="seeReservations"
-        android:text="Reservations" />
+        android:text="Drive" />
 
     <Button
         android:id="@+id/book_button"
-        android:layout_width="130dp"
+        android:layout_width="190dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:onClick="bookParking"
-        android:text="Book" />
-
-    <Button
-        android:id="@+id/seeall_button"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
+        android:text="Book"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="seeAll"
-        android:text="See All" />
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>
