@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.TripFlightListActivity"
+    tools:context="de.tum.in.repobruegge.pom17aprilsnow.flightapp.presentation.activities.SearchParkingActivity"
     >
 
 </android.support.constraint.ConstraintLayout>
