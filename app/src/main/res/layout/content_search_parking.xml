@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/reservation_button"
+        android:layout_above="@+id/buttonRow"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_weight="0.5">
@@ -17,26 +17,20 @@
         <include layout="@layout/fragment_map" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/mapwhere"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@+id/buttonRow"
-        android:layout_weight="1.03"
-        android:onClick="searchOptions" />
-
     <LinearLayout
         android:id="@+id/buttonRow"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <Button
             android:id="@+id/filter_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="searchOptions"
             android:text="Filter" />
 
@@ -44,6 +38,7 @@
             android:id="@+id/reservation_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="goDrive"
             android:text="Drive" />
 
@@ -51,6 +46,7 @@
             android:id="@+id/book_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="bookParking"
             android:text="Book" />
 
