@@ -57,14 +57,6 @@
         android:layout_alignParentStart="true" />
 
     <CheckBox
-        android:id="@+id/smallcar_checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Small Car"
-        android:layout_above="@+id/disabled_checkBox"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
         android:id="@+id/disabled_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
