@@ -2,14 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <Button
         android:id="@+id/starttime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/radioGroup"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/simpleSearchView"
-        android:layout_marginTop="38dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="showTimePickerDialog"
         android:text="Start Time" />
 
@@ -17,8 +15,16 @@
         android:id="@+id/radioGroup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/starttime"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/starttime">
+
+        <RadioButton
+            android:id="@+id/radio_smallCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="Small Car" />
 
         <RadioButton
             android:id="@+id/radio_bigCar"
@@ -27,21 +33,16 @@
             android:onClick="onRadioButtonClicked"
             android:text="Big Car" />
 
-        <RadioButton
-            android:id="@+id/radio_smallCar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="Small Car" />
     </RadioGroup>
 
     <Button
         android:id="@+id/go_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="48dp"
         android:onClick="setOptions"
         android:text="Go" />
+
+
 </RelativeLayout>
