@@ -5,50 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    <SearchView
-        android:id="@+id/simpleSearchView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:onClick="searchOptions"
-        android:queryHint="Where to?"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/simpleSearchView"
         android:layout_above="@+id/reservation_button"
-        android:layout_weight="0.5"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.5">
+
         <include layout="@layout/fragment_map" />
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/mapwhere"
         android:layout_width="match_parent"
-        android:layout_below="@+id/simpleSearchView"
-        android:layout_above="@+id/reservation_button"
         android:layout_height="0dp"
-        android:layout_weight="1.03" />
+        android:layout_above="@+id/buttonRow"
+        android:layout_weight="1.03"
+        android:onClick="searchOptions" />
 
-    <Button
-        android:id="@+id/reservation_button"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
+    <LinearLayout
+        android:id="@+id/buttonRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:onClick="seeReservations"
-        android:text="Drive" />
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/book_button"
-        android:layout_width="190dp"
-        android:layout_height="50dp"
-        android:onClick="bookParking"
-        android:text="Book"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        <Button
+            android:id="@+id/filter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="searchOptions"
+            android:text="Filter" />
 
+        <Button
+            android:id="@+id/reservation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goDrive"
+            android:text="Drive" />
+
+        <Button
+            android:id="@+id/book_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="bookParking"
+            android:text="Book" />
+
+    </LinearLayout>
 
 </RelativeLayout>

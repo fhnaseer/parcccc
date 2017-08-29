@@ -71,7 +71,7 @@ public class SearchParkingActivity extends NavigationItemActivity implements OnM
 
     }
 
-    public void bookParking(View view) {
+    public void goDrive(View view) {
         if (_selectedMarker == null) {
             Toast.makeText(getApplicationContext(), "Please select a parking.", Toast.LENGTH_SHORT).show();
             return;
@@ -79,6 +79,15 @@ public class SearchParkingActivity extends NavigationItemActivity implements OnM
         String uri = "http://maps.google.com/maps?f=d&hl=en&saddr=" + _currentPosition.latitude + "," + _currentPosition.longitude + "&daddr=" + _selectedMarker.getPosition().latitude + "," + _selectedMarker.getPosition().longitude;
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri));
         startActivity(Intent.createChooser(intent, "Select an application"));
+    }
+
+    public void bookParking(View view) {
+        if (_selectedMarker == null) {
+            Toast.makeText(getApplicationContext(), "Please select a parking.", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Your parking has been booked. Please select Drive to get directions to your parking spot.", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void searchOptions(View view) {
